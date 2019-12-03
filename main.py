@@ -17,9 +17,12 @@ fashion_mnist = keras.datasets.fashion_mnist
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
-# train_images = train_images / 255.0
+# Descomentar linha a baixo para conjunto de treinamento aleatório
+# train_images = np.random.randint(0, 255, (60000, 28, 28))
 
-# test_images = test_images / 255.0
+train_images = train_images / 255.0
+
+test_images = test_images / 255.0
 
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
